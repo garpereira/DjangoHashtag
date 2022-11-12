@@ -18,3 +18,47 @@ python3 manage.py runserver
 
 python3 manage.py startapp NOMEDAAPLICACAO
 
+*************Migrando os dados existentes para o DB.sqlite
+
+python3 manage.py migrate
+
+*************Models
+
+Define como os dados são tratados dentro do sistema, esse modelo gera informações para o banco do dados,
+toda informações que acontecer no site, passa pelo models e joga pro db
+
+
+*************Realizando a Migration após modificações em models
+
+python3 manage.py makemigrations <- podemos deixar nessa forma para realizarmos um migration geral
+python3 manage.py makemigrations <NOME DA aplicação> <- ou dessa forma para realizarmos em uma aplicação específica
+
+Após o makemigrations é importante realizar o migrate para garantir que as tabelas foram criadas no db
+
+Conforme as migrações vão sendo criadas, seu nome é atualizado sozinho como um tipo de versionamento de migrações
+
+
+*************SHELL
+
+python3 manage.py shell
+
+Através do Shell podemos modificar nossa aplicação criando objetos utilizando nossas classes
+
+from CLASSE import METODOS
+
+CLASSE.objects.all() <- lista todos os objetos da classes
+
+podemos atribuir um comando a uma variavel no shell, por exemplo:
+q = Question.objects.get(id=1) <- aqui atribuimos a q o objeto em questão, onde possui um id = 1, ou seja, faz um get do bd
+
+
+cria um objeto da classe choice com o valor em seu metodo choice_text = "Nao"
+q.choice_set.create(choice_text="Nao")
+
+constroi entao as alternativas criadas com o .create ao id relacionado em "q", ou seja, alternativas unicas para a pergunta
+q.choice_set.all()
+
+
+como queremos armazenar o tempo que a pergunta foi feita e respondida, importamos este metodo
+from django.utils import timezone
+
