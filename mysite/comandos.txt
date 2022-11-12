@@ -1,0 +1,20 @@
+Comandos visto para a criação e gerenciamento de uma aplicação Django
+
+
+
+*************Instalando o Django
+
+pip install Django
+
+*************Iniciando um Projeto
+
+django-admin startproject NOMEDOPROJETO
+
+*************Executando a aplicação
+
+python3 manage.py runserver
+
+*************Iniciando uma nova aplicação dentro do Projeto
+
+python3 manage.py startapp NOMEDAAPLICACAO
+
