@@ -6,5 +6,5 @@ from . import views
 
 #caminho que gostariamos de ver nossas urls
 urlpatterns = [
-  path('', views.index, name='index')
+  path('', views.index, name='index') #puxamos então a nossa FUNÇÃO index como um request
 ]
